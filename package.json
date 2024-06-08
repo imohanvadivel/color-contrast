@@ -54,6 +54,9 @@
     }
   },
   "dependencies": {
-    "figblocks": "^0.0.3"
+    "apca-w3": "^0.1.9",
+    "bridge-pca": "^0.1.6",
+    "colorparsley": "^0.1.8",
+    "figblocks": "^0.0.4"
   }
 }
