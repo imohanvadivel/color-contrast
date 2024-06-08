@@ -1,14 +1,13 @@
-# Figma-template-svelte
-- This is a template for creating Figma plugins using Svelte.
-- Figblock is a Svelte library that offers components and styles for building Figma plugins, and it's already included in this template.
-## Scripts
-- `watch:ui`: Monitors changes in the UI files and rebuilds them automatically when changes happen.
-- `build:ui`: Compiles the UI files for production use.
-- `watch:code`: Monitors changes in the Figma code file and rebuilds it automatically when changes happen.
-- `build:code`: Compiles the Figma code file for production use.
+# Color Contrast
+Measure color contrast in Figma using the APCA, BPCA, and WCAG 2 algorithms.
 
-```bash
-npm run watch:ui
+Figma plugin: https://www.figma.com/community/plugin/1380599887933734771/
 
-pnpm watch:code
-```
+
+#### How to use:
+
+- Select any layer—preferably text, but frame, group, component, or instance layers also work—to automatically extract the color.
+- Alternatively, you can manually input the color.
+- The calculated contrast value will be displayed below.
+- Click the "Show conformance" button at the bottom to view the WCAG conformance for the selected contrast.
+
