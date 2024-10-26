@@ -5,27 +5,9 @@
     import Background from "./Background.svelte";
     import Foreground from "./Foreground.svelte";
 
-    let foregroundColor = "#000";
-    let backgroundColor = "#FFF";
-    let foregroundOpacity = 1;
-
-    onMount(() => {
-        onmessage = (event) => {
-            const { type, payload } = event.data.pluginMessage;
-
-            if (type === "UPDATE") {
-                const { foreground, background } = payload;
-
-                foregroundOpacity = foreground && foreground.pop();
-                background && background.pop();
-
-                foregroundColor = foreground === null ? foregroundColor : rgb2Hex(foreground);
-                backgroundColor = backgroundColor === null ? backgroundColor : rgb2Hex(background);
-
-                colorStore.set({ foreground: foregroundColor, background: backgroundColor, foregroundOpacity });
-            }
-        };
-    });
+    export let foregroundColor: string;
+    export let backgroundColor: string;
+    export let foregroundOpacity: number;
 </script>
 
 <div>

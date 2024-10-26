@@ -89,3 +89,19 @@ export function isValidHex(hex: string, allowAlpha: boolean = false) {
         return /^#?([0-9A-Fa-f]{3}){1,2}$/.test(hex);
     }
 }
+
+export function processFgAndBg(payload: { foreground: number[]; background: number[] }) {
+    const { foreground, background } = payload;
+
+    let foregroundColor = "#000";
+    let backgroundColor = "#FFF";
+    let foregroundOpacity = 1;
+
+    foregroundOpacity = foreground && (foreground.pop() as number);
+    background && background.pop();
+
+    foregroundColor = foreground === null ? foregroundColor : rgb2Hex(foreground);
+    backgroundColor = backgroundColor === null ? backgroundColor : rgb2Hex(background);
+
+    return { foregroundColor, backgroundColor, foregroundOpacity };
+}

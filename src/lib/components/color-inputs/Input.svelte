@@ -1,7 +1,6 @@
 <script lang="ts">
     import { Icon } from "figblocks";
     import { colorStore } from "$lib/store.ts";
-    import { isValidHex } from "$lib/util.ts";
 
     export let id = "";
     export let name = "";
@@ -25,8 +24,6 @@
         let floatValue = parseFloat(fixedValue);
         opacity = floatValue + "%";
     }
-
-
 </script>
 
 <div class="input {className}">
@@ -38,6 +35,7 @@
 
     <div class="cnt">
         <input
+            class="hex"
             type="text"
             value={$colorStore.foreground}
             {name}
@@ -70,6 +68,10 @@
 </div>
 
 <style>
+    .hex {
+        width: 78px;
+        border-right: 1px solid var(--figma-color-border);
+    }
     .input {
         position: relative;
         width: 100%;
@@ -80,7 +82,7 @@
     }
     input.opacity {
         width: 46px;
-        border-left: none;
+        border-left: 1px solid transparent;
     }
 
     input {
